@@ -145,7 +145,21 @@ export const config: WebdriverIO.Config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver','firefox-profile','docker','eslinter'],
+    services: ['chromedriver','firefox-profile','docker','eslinter',[
+        'geckodriver',
+        // service options
+        {
+            // OPTIONAL: Arguments passed to geckdriver executable.
+            // Check geckodriver --help for all options. Example:
+            // ['--log=debug', '--binary=/var/ff50/firefox']
+            // Default: empty array
+            args: ['--log=info'],
+
+            // The path where the output of the Geckodriver server should
+            // be stored (uses the config.outputDir by default when not set).
+            logs: './logs'
+        }
+    ]],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
