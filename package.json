@@ -11,12 +11,19 @@
         "@wdio/mocha-framework": "^7.16.15",
         "@wdio/spec-reporter": "^7.16.14",
         "chromedriver": "^98.0.1",
+        "eslint": "^8.10.0",
+        "eslint-plugin-wdio": "^7.4.2",
         "ts-node": "^10.5.0",
         "typescript": "^4.5.5",
         "wdio-chromedriver-service": "^7.2.8",
-        "wdio-docker-service": "^3.2.0"
+        "wdio-docker-service": "^3.2.0",
+        "wdio-eslinter-service": "^0.0.2"
     },
     "scripts": {
-        "wdio": "./geckodriver & wdio run test/wdio.conf.ts"
+        "wdio": "./geckodriver & wdio run test/wdio.conf.ts",
+        "eslint": "eslint */specs/*"
+    },
+    "dependencies": {
+        "eslint-plugin-import": "^2.25.4"
     }
 }
