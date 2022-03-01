@@ -22,8 +22,9 @@
         "wdio-geckodriver-service": "^2.1.0"
     },
     "scripts": {
-        "wdio": "wdio run test/wdio.conf.ts",
-        "eslint": "eslint */specs/*"
+        "wdio": "rm -rf allure-results & wdio run test/wdio.conf.ts",
+        "eslint": "eslint */specs/*",
+        "allure": "allure generate allure-results --clean && allure open"
     },
     "dependencies": {
         "eslint-plugin-import": "^2.25.4"
